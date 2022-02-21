@@ -1,18 +1,38 @@
-#include <iostream>
 #include "Message.h"
 #include "Chat.h"
+#include "User.h"
+#include <iostream>
+#include <string>
+#include "Program.h"
+
 using namespace std;
+
 
 int main()
 {
-	Chat c1(10);
 
-	c1.addMessage("Anton", "Garm", "What`s up?");
-	c1.addMessage("Nobody", "Everybody", "Are you here?");
-	c1.addMessage("Him", "Me", "Nice to meet you!");
-	c1.showChat();
+	Program p1;
+
+	p1.setUser("LOG1", "1", "NAME1", 0);
+	p1.setUser("LOG2", "2", "NAME2", 1);
+	p1.setUser("LOG3", "3", "NAME3", 2);
+
+	p1.addMessage("Me", "You", "Hello!", 0);
+	p1.addMessage("She", "He", "Aloha!", 1);
+	p1.addMessage("Aba", "Uba", "Chears!", 2);
+
+	while (p1.getProgramStatus())
+	{
+		p1.mainMenu();
 
 
+		while (p1.getCurrentUser())
+		{
+			p1.userMenu();
+
+		}
+
+	}
 
 	return 0;
 }

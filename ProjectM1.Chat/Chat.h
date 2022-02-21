@@ -1,21 +1,27 @@
 #pragma once
 #include <string>
 #include "Message.h"
+#include <iostream>
 using namespace std;
 
-class Chat
+class Chat : public Message
 {
 private:
-	Message* _mess;
+	
+	Message* _messages;
 	int _length = 0;
 	
 
 public:
-	Chat() = default;
-	Chat(int length);
-	~Chat() = default;
 
-	void showChat();
+	
+
+	Chat();
+	
+	
+
+	void print();
 	void addMessage(string from, string to, string message);
+	
 };
 
