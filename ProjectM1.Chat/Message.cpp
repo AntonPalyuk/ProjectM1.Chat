@@ -1,11 +1,10 @@
 #include "Message.h"
-#include <iostream>
-using namespace std;
 
-Message::Message(string from, string to, string message) :_from{ from }, _to{ to }, _message{ message }
-{
-	cout << "Message was constructed" << endl;
-}
+Message::Message(): _from("DefFrom"), _to("DefTo"), _message("DefMessage") {}
+
+Message::Message(string from, string to, string message) :_from{ from }, _to{ to }, _message{ message }{}
+
+
 string Message::getFrom()
 {
 	return _from;
@@ -19,19 +18,6 @@ string Message::getTo()
 string Message::getMessage()
 {
 	return _message;
-}
-
-bool Message::getSlotStatus()
-{
-	return _slotStatus;
-
-}
-
-
-void Message::setSlotStatusFalse()
-{
-	_slotStatus = false;
-
 }
 
 void Message::setFrom(string s)
@@ -49,10 +35,11 @@ void Message::setMessage(string s)
 	_message = s;
 }
 
-void Message::MessageCout()
+void Message::print()
 {
 	cout << "From:  " << getFrom() << endl;
 	cout << "To:  " << getTo() << endl;
 	cout << "Message:  " << getMessage() << endl << endl;
 
 }
+

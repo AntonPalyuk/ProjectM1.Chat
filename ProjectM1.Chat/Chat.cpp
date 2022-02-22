@@ -1,47 +1,37 @@
 #include "Chat.h"
-#include "Message.h"
-#include <iostream>
-using namespace std;
 
-Chat::Chat(int length) : _length( length )
+Chat::Chat()
 {
-	_mess = new Message[length];
+	_messages = new Message[_length];
 
-
-	
 }
 
 void Chat::addMessage(string from, string to, string message)
 {
+	Message new_m(from, to, message);
+
+	Message* n_d = new Message[_length + 1];
+
 	for (int i = 0; i < _length; ++i)
 	{
-		if (_mess[i].getSlotStatus())
-		{
-			_mess[i].setFrom(from);
-			_mess[i].setTo(to);
-			_mess[i].setMessage(message);
-			_mess[i].setSlotStatusFalse();
-
-			break;
-		}
+		n_d[i] = _messages[i];
 	}
 
+	n_d[_length] = new_m;
+
+	delete[] _messages;
+	_messages = n_d;
+	++_length;
 
 }
 
-void Chat::showChat()
+void Chat::print()
 {
 	for (int i = 0; i < _length; ++i)
 	{
-		
-		if (_mess[i].getSlotStatus() == false)
-		{
-			_mess[i].MessageCout();
-		}
-			
-			
-		
+		_messages[i].print();
 
 	}
 
 }
+
