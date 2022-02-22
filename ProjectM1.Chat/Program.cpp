@@ -7,10 +7,17 @@ Program::Program()
 	_users = new User[_programLength];
 }
 
+<<<<<<< HEAD
 //Program::~Program()
 //{
 //	delete[] _users;
 //}
+=======
+Program::~Program()
+{
+	delete[] _users;
+}
+>>>>>>> 0f686408642cdfadb9969e40fc9ccd584fd1ecf1
 
 								/// Сеттеры
 
@@ -20,12 +27,15 @@ void Program::setUser(string log, string pas, string name, int index)
 
 }
 
+<<<<<<< HEAD
 //void Program::setUser(string log, string pas, string name, )
 //{
 //	_users[index].setUser(log, pas, name);
 //
 //}
 
+=======
+>>>>>>> 0f686408642cdfadb9969e40fc9ccd584fd1ecf1
 void Program::setStatusOFF()
 {
 	_chatIsON = false;
@@ -41,11 +51,19 @@ User* Program::getUserByLogin(string login)
 		{
 			return  &_users[i];
 		}
+<<<<<<< HEAD
 		//else
 		//{
 		//	return nullptr;
 		//	cout << "not found!" << endl;
 		//}
+=======
+		else
+		{
+			return nullptr;
+			cout << "not found!" << endl;
+		}
+>>>>>>> 0f686408642cdfadb9969e40fc9ccd584fd1ecf1
 	}
 }
 
@@ -98,8 +116,12 @@ void Program::registration()
 	cout << "Enter your name:  " << endl;
 	cin >> name;
 
+<<<<<<< HEAD
 	addUser();
 	setUser(login, password, name, _programLength - 1);
+=======
+	addUser(login, password, name);
+>>>>>>> 0f686408642cdfadb9969e40fc9ccd584fd1ecf1
 
 	cout << "User successfully created  " << endl << endl;
 
@@ -171,7 +193,11 @@ void Program::userMenu()
 		break;
 
 	case 1:
+<<<<<<< HEAD
 		cout << "choose user(index): " << endl;
+=======
+		cout << "choose user: " << endl;
+>>>>>>> 0f686408642cdfadb9969e40fc9ccd584fd1ecf1
 		cin >> userIndex;
 
 		cout << "From: " << endl;
@@ -191,6 +217,7 @@ void Program::userMenu()
 		break;
 	}
 }
+<<<<<<< HEAD
 	void Program::addUser()
 	{
 		User new_user;
@@ -230,3 +257,23 @@ void Program::userMenu()
 		_currentUser->printUser();
 		cout << endl;
 	}
+=======
+	void Program::addUser(string login, string pasword, string name)
+	{
+		User new_user(login, pasword, name);
+
+		User* n_d = new User[_programLength + 1];
+
+		for (int i = 0; i < _programLength; ++i)
+		{
+			n_d[i] = _users[i];
+		}
+
+		n_d[_programLength] = new_user;
+
+		delete[] _users;
+		_users = n_d;
+		++_programLength;
+
+}
+>>>>>>> 0f686408642cdfadb9969e40fc9ccd584fd1ecf1

@@ -20,7 +20,11 @@ public:
 											///конструкторы
 	User();          
 	User(string log, string pas, string name);
+<<<<<<< HEAD
 	//~User();
+=======
+	~User();
+>>>>>>> 0f686408642cdfadb9969e40fc9ccd584fd1ecf1
 
 											/// геттеры  
 	string getLogin();                                 

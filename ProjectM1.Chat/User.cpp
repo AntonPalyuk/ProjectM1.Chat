@@ -16,10 +16,17 @@ User::User(string log, string pas, string name) :_login(log), _pasword(pas), _na
 
 }
 
+<<<<<<< HEAD
 //User::~User()
 //{
 //	delete[] _chats;
 //}
+=======
+User::~User()
+{
+	delete[] _chats;
+}
+>>>>>>> 0f686408642cdfadb9969e40fc9ccd584fd1ecf1
 
 							   /// Сеттеры
 

@@ -21,7 +21,11 @@ public:
 								///Конструкторы
 
 	Program();
+<<<<<<< HEAD
 	//~Program();
+=======
+	~Program();
+>>>>>>> 0f686408642cdfadb9969e40fc9ccd584fd1ecf1
 
 								/// Сеттеры
 
@@ -44,12 +48,16 @@ public:
 	void registration();
 	void mainMenu();
 	void userMenu();
+<<<<<<< HEAD
 	void addUser();
 
 	                              //manual
 
 	void registrationM(string log, string pas, string name);
 	void loginM(string login);
+=======
+	void addUser(string login, string pasword, string name);
+>>>>>>> 0f686408642cdfadb9969e40fc9ccd584fd1ecf1
 
 };
 
